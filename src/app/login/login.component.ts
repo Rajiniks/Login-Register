@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   errorText: string;
   constructor(private fb: FormBuilder, private router: Router) {
     this.LoginApp = fb.group({
-      defaultFormEmail: ["", Validators.required],
+      defaultFormName: ["", [Validators.required, Validators.minLength(4)]],
       defaultFormPass: ["", [Validators.required, Validators.minLength(8)]]
     });
   }
@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     } else {
       this.errorText = "";
       alert("Login Successful");
+      this.router.navigate(["/userdetails"]);
     }
   }
   goToRegisterUser() {

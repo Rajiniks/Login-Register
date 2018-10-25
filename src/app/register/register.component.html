@@ -1,22 +1,39 @@
-<form [formGroup]="RegisterApp">
-  <p class="h5 text-center mb-4">Login</p>
+<div class="container">
+  <div class="row">
+    <div class="col-25">
+      <form [formGroup]="RegisterApp">
+        <h1 class="text-info">Registration Form</h1>
+        <div class="form-group">
 
-  <div class="md-form">
-    <input type="text" formControlName="defaultFormEmail" id="defaultForm-email" class="form-control">
-    <label for="defaultForm-email">Your email</label>
-  </div>
+          <div class="md-form">
+            <label for="defaultForm-name" class="text-info">Name</label>
+            <input type="text" placeholder="Enter Name" formControlName="defaultFormName" class="form-control">
+          </div>
 
-  <div class="md-form">
-    <input type="password" formControlName="defaultFormPass" id="defaultForm-pass" class="form-control">
-    <label for="defaultForm-pass">Your password</label>
-  </div>
-  <div class="md-form">
-    <input type="password" formControlName="defaultFormPass" id="defaultForm-pass" class="form-control">
-    <label for="defaultForm-pass">Your password</label>
-  </div>
-  <span *ngIf="errorText" class="text-danger">{{ errorText }}</span>
 
-  <div class="text-center">
-    <button class="btn btn-primary" (click)="login()">Login</button>
+          <div class="md-form">
+            <label for="defaultForm-pass" class="text-info">Username</label>
+            <input type="text" placeholder="Enter Username" formControlName="defaultFormUname" class="form-control">
+          </div>
+
+          <div class="md-form">
+            <label for="defaultForm-email" class="text-info">Email Id</label>
+            <input type="email" placeholder="Enter Email Id" formControlName="defaultFormEmail" class="form-control">
+          </div>
+
+          <div class="md-form">
+            <label for="defaultForm-pass" class="text-info">Password</label>
+            <input type="password" placeholder="Enter Password" formControlName="defaultFormPass" class="form-control"><br>
+          </div>
+
+          <span *ngIf="errorText" class="text-danger">{{ errorText }}</span>
+
+
+          <button class="btn btn-primary" (click)="Register()">Register</button> &nbsp;
+          <input type="reset" class="text-info" value="reset">
+
+        </div>
+      </form>
+    </div>
   </div>
-</form>
+</div>
